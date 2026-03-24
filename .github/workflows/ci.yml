@@ -33,3 +33,5 @@ jobs:
       - name: Lint frontend
         working-directory: Client
         run: npm run lint -- --max-warnings=0
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
