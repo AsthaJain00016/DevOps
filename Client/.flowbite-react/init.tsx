@@ -16,7 +16,7 @@ export const CONFIG = {
 };
 
 export function ThemeInit() {
-  return <StoreInit {...CONFIG} />;
+  return <StoreInit {...CONFIG} />
 }
 
 ThemeInit.displayName = "ThemeInit";

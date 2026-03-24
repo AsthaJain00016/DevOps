@@ -1,5 +1,4 @@
 import {
-  TabItem,
   Table,
   TableBody,
   TableCell,
@@ -7,10 +6,9 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
-import React from "react";
 import axios from "axios";
 
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 
 export function EnquiryList({ data, getAllEnquiry, Swal, setFormData }) {
   let deleteRow = (delid) => {
@@ -21,7 +19,7 @@ export function EnquiryList({ data, getAllEnquiry, Swal, setFormData }) {
       confirmButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8020/api/website/enquiry/delete/${delid}`).then((res) => {
+        axios.delete(`http://localhost:8020/api/website/enquiry/delete/${delid}`).then(() => {
           toast.success("Enquiry deleted ssuccesfully");
           getAllEnquiry();
         });
@@ -41,6 +39,7 @@ export function EnquiryList({ data, getAllEnquiry, Swal, setFormData }) {
       })
       .catch((err) => {
         toast.error("Error fetching enquiry data");
+        console.log(err)
       });
   };
 

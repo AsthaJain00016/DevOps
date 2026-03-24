@@ -1,7 +1,6 @@
-import React from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { Button, Checkbox, Textarea, Label, TextInput } from "flowbite-react";
+import { Button, Textarea, Label, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { EnquiryList } from "./enquiry/EnquiryList";
 import { useEffect } from "react";
@@ -36,6 +35,7 @@ export default function Enquiry() {
             message: "",
             _id: "",
           });
+          console.log(res)
           getAllEnquiry();
         });
     } else {

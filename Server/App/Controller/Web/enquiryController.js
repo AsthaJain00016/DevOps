@@ -1,4 +1,4 @@
-const enquiryModel = require("../../Model/userEnquiry.model");
+const enquiryModel = require('../../Model/userEnquiry.model');
 
 let enquiryInsert = async (req, resp) => {
   let { name, email, phone, message } = req.body;
@@ -13,13 +13,13 @@ let enquiryInsert = async (req, resp) => {
     .then(() => {
       resp.send({
         status: 1,
-        message: "Enquiry inserted successfully",
+        message: 'Enquiry inserted successfully',
       });
     })
     .catch((err) => {
       resp.send({
         status: 0,
-        message: "Error while saving the enquiry",
+        message: 'Error while saving the enquiry',
         err,
       });
     });
@@ -28,7 +28,7 @@ let enquiryList = async (req, resp) => {
   let enquiryList = await enquiryModel.find();
   resp.status(200).json({
     status: 1,
-    message: "Enquiry List",
+    message: 'Enquiry List',
     data: enquiryList,
   });
 };
@@ -56,7 +56,7 @@ let enquiryUpdate = async (req, resp) => {
 
   resp.send({
     status: 1,
-    message: "Enquiry updated successfully",
+    message: 'Enquiry updated successfully',
     id: enquiryId,
     updateResponse,
   });
@@ -66,7 +66,7 @@ let enquiryDelete = async (req, resp) => {
   let deleteEnquiry = await enquiryModel.deleteOne({ _id: enquiryId });
   resp.send({
     status: 1,
-    message: "Enquiry deleted successfully",
+    message: 'Enquiry deleted successfully',
     id: enquiryId,
     delResponse: deleteEnquiry,
   });

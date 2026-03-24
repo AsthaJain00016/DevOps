@@ -1,4 +1,4 @@
-let mongoose = require("mongoose");
+let mongoose = require('mongoose');
 let schema = mongoose.Schema;
 let enquirySchema = new schema({
   name: {
@@ -20,5 +20,5 @@ let enquirySchema = new schema({
   },
 });
 
-let enquiryModel = mongoose.model("Enquiri", enquirySchema);
+let enquiryModel = mongoose.model('Enquiri', enquirySchema);
 module.exports = enquiryModel;
